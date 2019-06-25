@@ -3,7 +3,7 @@ Edge Flow Manager Docker Instance
 
 Inline `code` has `back-ticks around` it.
 
-## H2 Edge Flow Manager UI
+## H2 Docker Instance for Edge Flow Manager UI
 
 This docker instance will launch a EFM UI.  git clone this repo
 
