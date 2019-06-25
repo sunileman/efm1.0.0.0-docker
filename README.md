@@ -1,7 +1,7 @@
 
 ## H2 Docker Instance for Edge Flow Manager UI
 
-This docker instance will launch a EFM UI.  git clone this repo
+This docker instance will launch a EFM UI
 
 1.  Git Clone
 2.  Build a docker image
