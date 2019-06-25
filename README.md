@@ -1,7 +1,3 @@
-# efm1.0.0.0-docker
-Edge Flow Manager Docker Instance
-
-Inline `code` has `back-ticks around` it.
 
 ## H2 Docker Instance for Edge Flow Manager UI
 
