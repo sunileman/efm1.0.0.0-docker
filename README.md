@@ -1,5 +1,5 @@
 
-## H2 Docker Instance for Edge Flow Manager UI
+## Docker Instance for Edge Flow Manager UI
 
 This docker instance will launch a EFM UI
 
