@@ -19,4 +19,14 @@
 
 #. /opt/script/config.sh # Apply configuration to connect to environment registry
 
-sudo /opt/efm/efm-*/bin/efm.sh run
+#sudo /opt/efm/efm-*/bin/efm.sh run
+
+# Continuously provide logs so that 'docker logs' can    produce them
+"sudo ${EFM_HOME}/bin/efm.sh" run &
+tail -F "${EFM_HOME}/logs/efm-app.log" &
+efm_pid="$!"
+
+trap "echo Received trapped signal, beginning shutdown...;" KILL TERM HUP INT EXIT;
+
+echo EFM running with PID ${efm_pid}.
+wait ${efm_pid}
