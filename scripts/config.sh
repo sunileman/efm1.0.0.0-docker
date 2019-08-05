@@ -23,3 +23,13 @@
 #export properties_file='/opt/c2/c2-1.0.0-SNAPSHOT/conf/c2.properties'
 
 # Nothing to do, all ENV overrides are applied by the application
+# Default to binding to any interface
+sed -i -e "s|^efm.server.address=.*$|efm.server.address=0.0.0.0|" $EFM_HOME'/conf/efm.properties'
+
+sed -i -e "s|^efm.nifi.registry.enabled=.*$|efm.nifi.registry.enabled=$NIFI_REGISTRY_ENABLED|" $EFM_HOME'/conf/efm.properties'
+
+sed -i -e "s|^efm.nifi.registry.url=.*$|efm.nifi.registry.url=$NIFI_REGISTRY|" $EFM_HOME'/conf/efm.properties'
+
+sed -i -e "s|^efm.nifi.registry.bucketId=.*$|efm.nifi.registry.bucketId=$NIFI_REGISTRY_BUCKETID|" $EFM_HOME'/conf/efm.properties'
+
+sed -i -e "s|^efm.nifi.registry.bucketName=.*$|efm.nifi.registry.bucketName=$NIFI_REGISTRY_BUCKETNAME|" $EFM_HOME'/conf/efm.properties'
