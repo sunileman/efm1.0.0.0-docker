@@ -40,7 +40,7 @@ RUN sed -i -e "s|^efm.nifi.registry.bucketId=.*$|efm.nifi.registry.bucketId=$NIF
 RUN sed -i -e "s|^efm.nifi.registry.bucketName=.*$|efm.nifi.registry.bucketName=$NIFI_REGISTRY_BUCKETNAME|" $EFM_HOME'/conf/efm.properties'
 
 
-
+RUN apk add --no-cache bash
 
 RUN ["chmod", "+x", "/opt/script/entrypoint.sh"]
 
