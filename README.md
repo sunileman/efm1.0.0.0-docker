@@ -8,3 +8,5 @@ This docker instance will launch a EFM UI
   * `docker build --no-cache -t efm .`
 3.  Run the image
   * `docker run --name efm -p 10080:10080 -d efm:latest`
+4.  UI available here
+  * `http://localhost:10080/efm/ui`
