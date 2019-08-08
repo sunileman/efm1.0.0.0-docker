@@ -24,7 +24,7 @@
 sh $EFM_SCRIPTS/config.sh
 
 # Continuously provide logs so that 'docker logs' can    produce them
-"${EFM_HOME}/bin/efm.sh" run &
+"${EFM_HOME}/bin/efm.sh" start &
 tail -F "${EFM_HOME}/logs/efm-app.log" &
 efm_pid="$!"
 
