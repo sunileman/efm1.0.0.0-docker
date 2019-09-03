@@ -21,16 +21,17 @@ ENV EFM_SCRIPTS /opt/scripts
 ENV EFM_CONFIG_SCRIPT $EFM_SCRIPTS/config.sh
 ENV EFM_ENTRY_SCRIPT $EFM_SCRIPTS/entrypoint.sh
 
-
-
-RUN apk add --no-cache bash
-
+RUN apk add --no-cache bash wget
 
 EXPOSE 10080
 
 ADD ./scripts $EFM_SCRIPTS
 
-ADD ./target/efm-*-bin.tar.gz $EFM_BASE_DIR
+RUN wget https://sunileman1.s3-us-west-2.amazonaws.com/CEM/JAVA/efm-$EFM_VERSION-bin.tar.gz -P $EFM_BASE_DIR
+
+run tar -xzf $EFM_BASE_DIR/efm-$EFM_VERSION-bin.tar.gz
+
+#ADD ./target/efm-*-bin.tar.gz $EFM_BASE_DIR
 
 RUN addgroup -g $GID efm || groupmod -n efm `getent group $GID | cut -d: -f1`
 
