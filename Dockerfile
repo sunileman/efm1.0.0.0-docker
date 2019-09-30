@@ -29,7 +29,7 @@ ADD ./scripts $EFM_SCRIPTS
 
 RUN wget https://sunileman1.s3-us-west-2.amazonaws.com/CEM/JAVA/efm-$EFM_VERSION-bin.tar.gz -P $EFM_BASE_DIR
 
-run tar -xzf $EFM_BASE_DIR/efm-$EFM_VERSION-bin.tar.gz
+run tar -xzf $EFM_BASE_DIR/efm-$EFM_VERSION-bin.tar.gz -C $EFM_BASE_DIR
 
 #ADD ./target/efm-*-bin.tar.gz $EFM_BASE_DIR
 
