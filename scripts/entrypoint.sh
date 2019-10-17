@@ -23,8 +23,10 @@
 
 sh $EFM_SCRIPTS/config.sh
 
+export EFM_ENCRYPTION_PASSWORD=setAnEncryptionPasswordHere
+
 # Continuously provide logs so that 'docker logs' can    produce them
-"${EFM_HOME}/bin/efm.sh" start &
+"${EFM_HOME}/bin/efm.sh" start  &
 tail -F "${EFM_HOME}/logs/efm-app.log" &
 efm_pid="$!"
 
